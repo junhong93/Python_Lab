@@ -22,9 +22,21 @@
 
 month = input("Enter the month of the year (Jan - Dec): ")
 day = input("Enter the day of the month: ")
-months = ['Jan', 'Feb', 'Mar', 'April', 'May', 'June', 'July', "Aug", "Spe", "Oct", "Nov", "Dec"]
+months = ['Jan', 'Feb', 'Mar', 'April', 'May', 'June', 'July', "Aug", "Sep", "Oct", "Nov", "Dec"]
+season = ""
 
-for months in day:
-    if month >= months[11] + int(21) and month <= months[4] + int(19):
-        print(f"{month} is in Winter") 
+# for months in day:
+#     if month >= months[11] + str(21) and month <= months[4] + str(19):
+#         print(f"{month} is in Winter") 
 
+if ((month == 'Mar') and (day > 19)) or (month == "April") or (month == "May") or ((month == "June") and (day < 21)):
+	season = 'spring'
+elif ((month == 'Jun') and (day > 20)) or (month == "July") or (month == "Aug") or ((month == "Sep") and (day < 22)):
+	season = 'Summer'
+elif ((month == 'Sep') and (day > 21)) or (month == "Oct") or (month == "Nov") or ((month == "Dec") and (day < 21)):
+	season = 'Fall'
+elif ((month == 'Dec') and (day > 20)) or (month == "Jan") or (month == "Feb") or ((month == "Mar") and (day < 20)):
+	season = 'Winter'
+
+
+print(f"{month} {day} is {season}")
